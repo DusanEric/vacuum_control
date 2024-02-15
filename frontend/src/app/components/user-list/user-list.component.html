@@ -1,0 +1,8 @@
+<div>
+  <div *ngFor="let user of users; let i = index;" class="mb-2">
+    <h3>{{ i+1 }}. <a [routerLink]="'/edit-user/'+(i+1)">{{user.lastName}}</a></h3>
+    <p>{{ user.firstName }}</p>
+    <p>{{ user.email }}</p>
+    <p>{{ user.permissions }}</p>
+  </div>
+</div>

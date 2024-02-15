@@ -1,0 +1,24 @@
+<div>
+
+  <select [(ngModel)]="selectedStatus" class="mr-2">
+    <option value="ON">ON</option>
+    <option value="OFF">OFF</option>
+    <option value="DISCHARGE">DISCHARGE</option>
+  </select>
+
+  <button (click)="getVacuumsWithStatus()" [ngClass]="{'btn-blue': true}">Search</button>
+
+  <div *ngFor="let vacuum of vacuums; let i = index;" class="mb-2">
+    <h3>VacuumID : {{ vacuum.vacuumId }}</h3>
+    <p>{{ vacuum.status }}</p>
+    <p>{{ vacuum.addedBy.email }}</p>
+    <p>{{ vacuum.active }}</p>
+    <p>{{ vacuum.count }}</p>
+
+    <button (click)="startVacuum(vacuum.vacuumId)" [ngClass]="{'btn-blue': true}">START</button>
+    <button (click)="stopVacuum(vacuum.vacuumId)" [ngClass]="{'btn-red': true}">STOP</button>
+    <button (click)="dischargeVacuum(vacuum.vacuumId)" [ngClass]="{'btn-green': true}">DISCHARGE</button>
+    <button (click)="removeVacuum(vacuum.vacuumId)" [ngClass]="{'btn-orange': true}">REMOVE</button>
+
+  </div>
+</div>

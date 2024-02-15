@@ -1,0 +1,19 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a [routerLink]="'/'" class="navbar-brand">Demo 2</a>
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a [routerLink]="'/'" class="nav-link active" aria-current="page">Login</a>
+          <a [routerLink]="'/vacuums'" class="nav-link" aria-current="page">Vacuums</a>
+          <a [routerLink]="'/add-vacuum'" class="nav-link" aria-current="page">Add Vacuum</a>
+          <a [routerLink]="'/users'" class="nav-link" aria-current="page">Users</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="container pt-3">
+  <router-outlet></router-outlet>
+</div>

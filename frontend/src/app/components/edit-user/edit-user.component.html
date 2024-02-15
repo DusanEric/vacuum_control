@@ -1,0 +1,32 @@
+<div>
+  <h3>Edit user</h3>
+
+  <div>
+    <form [formGroup]="editForm" (submit)="updateUser()" class="mb-5">
+      <div class="form-group">
+        <label for="firstName">First name</label>
+        <input type="text" class="form-control" id="firstName" placeholder="First Name" [formControlName]="'firstName'">
+        <div class="error-message text-danger" *ngIf="editForm.get('firstName')?.errors?.['required']"> First name is required! </div>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last name</label>
+        <input type="text" class="form-control" id="lastName" placeholder="Last Name" [formControlName]="'lastName'">
+        <div class="error-message text-danger" *ngIf="editForm.get('lastName')?.errors?.['required']"> Last name is required! </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" placeholder="name@example.com" [formControlName]="'email'">
+        <div class="error-message text-danger" *ngIf="editForm.get('email')?.errors?.['required']"> Email is required! </div>
+      </div>
+      <div class="form-group">
+        <label for="permissions">Permissions</label>
+        <textarea type="text" id="permissions" placeholder="can_read_users" [formControlName]="'permissions'"></textarea>
+        <div class="error-message text-danger" *ngIf="editForm.get('permissions')?.errors?.['required']"> Permissions is required! </div>
+      </div>
+
+      <button [disabled]="!editForm.valid" type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <button (click)="deleteUser()" class="btn btn-danger">Delete</button>
+  </div>
+</div>
